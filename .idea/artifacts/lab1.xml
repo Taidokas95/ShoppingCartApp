@@ -1,6 +1,20 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="lab1">
     <output-path>$PROJECT_DIR$/out/artifacts/lab1</output-path>
-    <root id="root" />
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="dslab1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.mysql:mysql-connector-j:8.0.33" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.21.9" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:11.0.0-M26" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:11.0.0-M26" />
+          <element id="library" level="project" name="Maven: org.eclipse.jdt:ecj:3.38.0" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="dslab1/web/Web" />
+    </root>
   </artifact>
 </component>
