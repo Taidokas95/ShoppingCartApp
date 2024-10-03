@@ -1,4 +1,4 @@
-package UI;
+package UIControllers;
 
 public class ConfirmOrderServlet {
 }

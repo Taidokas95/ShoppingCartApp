@@ -1,30 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <title>Products</title>
 </head>
 <body>
 <h2>Available Products</h2>
-<table border="1">
+<table>
     <tr>
         <th>Product</th>
         <th>Price</th>
-        <th>Action</th>
     </tr>
-    <c:forEach var="product" items="${products}">
+    <c:forEach var="item" items="${items}">
         <tr>
-            <td>${product.name}</td>
-            <td>${product.price}</td>
+            <td>${item.name}</td>
+            <td>${item.price}</td>
             <td>
-                <form action="cart" method="post">
-                    <input type="hidden" name="productId" value="${product.id}" />
+                <form action="shoppingcart" method="post">
+                    <input type="hidden" name="itemId" value="${item.id}" />
                     <input type="submit" value="Add to Cart" />
                 </form>
             </td>
         </tr>
     </c:forEach>
 </table>
-<a href="cart">View Cart</a>
+<a href="shoppingcart.jsp">View Cart</a>
 </body>
 </html>

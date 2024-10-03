@@ -10,12 +10,21 @@
 
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>UI.LoginServlet</servlet-class>
+        <servlet-class>UIControllers.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoadItemsServlet</servlet-name>
+        <servlet-class>UIControllers.LoadItemsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoadItemsServlet</servlet-name>
+        <url-pattern>/LoadItemsServlet</url-pattern>
     </servlet-mapping>
 
 </web-app>

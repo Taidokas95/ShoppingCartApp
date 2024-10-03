@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Your Shopping Cart</h2>
-<table border="1">
+<table>
     <tr>
         <th>Product</th>
         <th>Price</th>
@@ -20,6 +20,6 @@
         </tr>
     </c:forEach>
 </table>
-<a href="checkout.jsp">Proceed to Checkout</a>
+<a href="">Proceed to Checkout</a>
 </body>
 </html>

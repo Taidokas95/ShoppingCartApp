@@ -1,4 +1,4 @@
-package UI;
+package UIControllers;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
+@WebServlet(name = "LoginServlet")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
         String validPassword = "password";
 
         if (username != null && password != null && username.equals(validUsername) && password.equals(validPassword)) {
-            response.getWriter().println("<h2>Login successful! Welcome, " + username + ".</h2>");
+            response.sendRedirect("LoadItemsServlet");
         } else {
             response.getWriter().println("<h2>Invalid username or password. Please try again.</h2>");
         }
