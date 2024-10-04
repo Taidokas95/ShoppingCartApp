@@ -1,5 +1,7 @@
 package UIControllers;
 
+import BO.User;
+import DB.UserManager;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,13 +18,17 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        String validUsername = "user";
-        String validPassword = "password";
+        if (username != null && password != null) {
 
-        if (username != null && password != null && username.equals(validUsername) && password.equals(validPassword)) {
-            response.sendRedirect("LoadItemsServlet");
+            BO.User user = DB.UserManager.authenticateUser(username, password);
+
+            if (user != null) {
+                response.sendRedirect("LoadItemsServlet");
+            } else {
+                response.getWriter().println("<h2>Invalid username or password. Please try again.</h2>");
+            }
         } else {
-            response.getWriter().println("<h2>Invalid username or password. Please try again.</h2>");
+            response.getWriter().println("<h2>Username or password cannot be empty.</h2>");
         }
     }
 }
