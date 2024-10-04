@@ -12,14 +12,14 @@
         <th>Price</th>
         <th>Quantity</th>
     </tr>
-    <c:forEach var="item" items="${cart}">
+    <c:forEach var="item" items="${items}">
         <tr>
-            <td>${item.product.name}</td>
-            <td>${item.product.price}</td>
+            <td>${item.name}</td>
+            <td>${item.price}</td>
             <td>${item.quantity}</td>
         </tr>
     </c:forEach>
 </table>
-<a href="">Proceed to Checkout</a>
+<a href="/checkout.jsp">Proceed to Checkout</a>
 </body>
 </html>

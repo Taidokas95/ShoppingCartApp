@@ -7,6 +7,7 @@
 </head>
 <body>
 <h2>Available Products</h2>
+<a href="LoadItemsServlet">Load items</a>
 <table>
     <tr>
         <th>Product</th>
@@ -17,14 +18,15 @@
             <td>${item.name}</td>
             <td>${item.price}</td>
             <td>
-                <form action="shoppingcart" method="post">
+                <form action="AddToCartServlet" method="post">
                     <input type="hidden" name="itemId" value="${item.id}" />
+                    <input type="hidden" name="userId" value="user"/>
                     <input type="submit" value="Add to Cart" />
                 </form>
             </td>
         </tr>
     </c:forEach>
 </table>
-<a href="shoppingcart.jsp">View Cart</a>
+<a href="ShoppingCartServlet">View Cart</a>
 </body>
 </html>

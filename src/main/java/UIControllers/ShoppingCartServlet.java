@@ -1,7 +1,7 @@
 package UIControllers;
 
 import BO.Item;
-import DB.ItemManager;
+import DB.ShoppingCartManager;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,25 +12,23 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "LoadItemsServlet", urlPatterns = "/items")
-public class LoadItemsServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+@WebServlet(name = "ShoppingCartServlet")
+public class ShoppingCartServlet extends HttpServlet {
 
     private List<Item> items = new ArrayList<Item>();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         items.clear();
-        getItems();
+        getShoppingCart();
         if (!items.isEmpty()) {
             request.setAttribute("items", items);
-            request.getRequestDispatcher("/items.jsp").forward(request, response);
+            request.getRequestDispatcher("/shoppingcart.jsp").forward(request, response);
         } else {
             throw new ServletException("No items found");
         }
     }
 
-    private void getItems() {
-        items.addAll(ItemManager.getItems());
+    private void getShoppingCart() {
+        items.addAll(ShoppingCartManager.getShoppingCart("user"));
     }
 }
-
