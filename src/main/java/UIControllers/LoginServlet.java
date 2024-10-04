@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
 
             if (user != null) {
                 response.sendRedirect("LoadItemsServlet");
+
             } else {
                 response.getWriter().println("<h2>Invalid username or password. Please try again.</h2>");
             }

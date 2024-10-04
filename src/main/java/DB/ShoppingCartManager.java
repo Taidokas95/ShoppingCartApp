@@ -1,7 +1,5 @@
 package DB;
 
-import BO.ShoppingCart;
-import BO.User;
 import BO.Item;
 
 import java.sql.Connection;
