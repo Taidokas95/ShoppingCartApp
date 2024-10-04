@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet(name = "LoginServlet")
@@ -24,6 +25,8 @@ public class LoginServlet extends HttpServlet {
 
             if (user != null) {
                 response.sendRedirect("LoadItemsServlet");
+                HttpSession session = request.getSession();
+                session.setAttribute("userId", username);  // Store user ID in session
 
             } else {
                 response.getWriter().println("<h2>Invalid username or password. Please try again.</h2>");

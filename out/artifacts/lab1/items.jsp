@@ -20,7 +20,6 @@
             <td>
                 <form action="AddToCartServlet" method="post">
                     <input type="hidden" name="itemId" value="${item.id}" />
-                    <input type="hidden" name="userId" value="user"/>
                     <input type="submit" value="Add to Cart" />
                 </form>
             </td>

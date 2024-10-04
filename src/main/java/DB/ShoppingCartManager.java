@@ -2,6 +2,7 @@ package DB;
 
 import BO.Item;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
