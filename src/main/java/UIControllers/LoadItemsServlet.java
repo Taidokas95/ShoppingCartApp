@@ -1,6 +1,7 @@
 package UIControllers;
 
 import BO.Item;
+import BO.ItemHandler;
 import DB.ItemManager;
 
 import javax.servlet.ServletException;
@@ -16,7 +17,7 @@ import java.util.List;
 public class LoadItemsServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    private List<Item> items = new ArrayList<Item>();
+    private List<ItemInfo> items = new ArrayList<ItemInfo>();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         items.clear();
@@ -30,7 +31,7 @@ public class LoadItemsServlet extends HttpServlet {
     }
 
     private void getItems() {
-        items.addAll(ItemManager.getItems());
+        items.addAll(ItemHandler.getItems());
     }
 }
 

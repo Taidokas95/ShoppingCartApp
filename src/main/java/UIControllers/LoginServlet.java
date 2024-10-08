@@ -1,7 +1,6 @@
 package UIControllers;
 
-import BO.User;
-import DB.UserManager;
+import BO.UserHandler;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +20,7 @@ public class LoginServlet extends HttpServlet {
 
         if (username != null && password != null) {
 
-            BO.User user = DB.UserManager.authenticateUser(username, password);
+            UserInfo user = UserHandler.authenticateUser(username,password);
 
             if (user != null) {
                 response.sendRedirect("LoadItemsServlet");

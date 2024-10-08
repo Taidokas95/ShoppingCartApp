@@ -1,6 +1,7 @@
 package UIControllers;
 
 import BO.Item;
+import BO.ItemHandler;
 import DB.ShoppingCartManager;
 
 import javax.servlet.ServletException;
@@ -16,7 +17,7 @@ import java.util.List;
 @WebServlet(name = "ShoppingCartServlet")
 public class ShoppingCartServlet extends HttpServlet {
 
-    private List<Item> items = new ArrayList<Item>();
+    private List<ItemInfo> items = new ArrayList<ItemInfo>();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         items.clear();
@@ -38,7 +39,6 @@ public class ShoppingCartServlet extends HttpServlet {
     }
 
     private void getShoppingCart(String userId) {
-
-        items.addAll(ShoppingCartManager.getShoppingCart(userId));
+        items.addAll(ItemHandler.getShoppingCart(userId));
     }
 }

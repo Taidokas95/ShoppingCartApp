@@ -1,5 +1,6 @@
 package UIControllers;
 
+import BO.ItemHandler;
 import DB.ShoppingCartManager;
 
 import javax.servlet.ServletException;
@@ -27,7 +28,7 @@ public class AddToCartServlet extends HttpServlet {
         int itemId = Integer.parseInt(itemIdParam);
 
         try {
-            ShoppingCartManager.addShoppingCart(userId, itemId);
+            ItemHandler.addToCart(userId,itemId);
 
             response.setContentType("text/html");
             response.getWriter().write("Item successfully added to cart.");
